@@ -34,7 +34,6 @@ Version 3.20
 - New Smart Key
 - Added the possibillity to remove previously Reborn Tweaks intallation
 - Added Reborn Addons banner
-- Updated ROM verification for all the devices
 
 Version 3.30
 
@@ -42,7 +41,10 @@ Version 3.30
 
 Version 3.50
 
-- Updated Reborn featured Nitrox Tweaks
-- Added support for the ancora device (ROM will be published in two weeks)
-- Deleted many strings in aroma-config
-- Some other minor improvements made in Aroma Installer
+- Switched to LP 
+- Removed the Reborn Tweaks section because is not necessary anymore
+- Updated the Hosts file for the Ads Block 
+- Added compatibillity for the ancora device
+- Removed the compatibillity for the galaxysmtd and vibrantmtd
+- Some other minor changes made to the Aroma Installer
+- Updated ROM verification for all the devices

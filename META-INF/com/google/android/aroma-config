@@ -28,7 +28,7 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "Reborn Addons");
-ini_set("rom_version",          "3.7");
+ini_set("rom_version",          "3.5");
 ini_set("rom_author",           "nilac8991");
 ini_set("rom_device",           "All S+ Reborn supported devices");
 ini_set("rom_date",             "Feb, 19 2015");
@@ -121,7 +121,6 @@ textbox(
   #-- Arg 4
     resread("changelog.txt")
 );
-
 ###################################################################################################################
 #
 # STEP 5 - Utility Xperia Apps
@@ -165,49 +164,6 @@ checkbox(
 	"Sony's Sketch", "Sketch can be also known as an Android version of Paint because it let you draw and create a large variety of elements",1,
   "Sony's Movie Creator","Sony's Movie Creator let's you create fantastic videos through a large variety of video effects",1,
   "Xperia Z3 Wallpapers","All new Xperia Z3 Wallpapers in High definition",0
-);
-
-
-###################################################################################################################
-#
-# STEP 7 - Reborn Tweaks Introduction
-#
-
-  textbox(
-    "Reborn Addons Introduction",
-
-    "Disclaimer:",
-    
-    "@agreement",
-    
-    resread("reborntweaksintroduction.txt")
-);
-
-
-###################################################################################################################
-#
-# STEP 8 - Reborn Tweaks
-#
-
-selectbox(
-  #-- Title
-    "Reborn Tweaks",
-  
-  #-- Sub Title
-    "Please select the type of tweaks you want to install:",
-  
-  #-- Icon
-    "@apps",
-    
-  #-- Will be saved in /tmp/aroma/demo.prop
-    "reborntweaks.prop",
-                              #Tweaks designed to get from the device the most of performance
-
-
-  "Reborn Additional Tweaks", "The main Reborn tweaks are already included in the ROM but these ones are just "something more" and they are featured with the Nitrox ones ,1,
-  "Reborn Tweaks Uninstall", "It's a script that allows you to remove the Installed Tweaks",0,
-  "Balanced", "leave the ROM as it is in this moment",0
-
 );
 
 ###################################################################################################################
