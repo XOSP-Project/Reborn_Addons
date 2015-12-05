@@ -1,6 +1,5 @@
-Reborn Addons ChangeLOG
- 
-#######################''XOSP Is A Project licensed under Apache License''#####################################
+
+#### Reborn Addons is part of the Xperia Open Source Project ####
 
 ##Version 1.00##
 
@@ -11,21 +10,21 @@ Reborn Addons ChangeLOG
 ##Version 2.50##
 
 - New Added Sony's Movie Creator
-- New Added Sony's Backup and Restore app 
+- New Added Sony's Backup and Restore app
 - Added Xperia Wallpapers in the personalization section
 - Created section for the Reborn Tweaks
 - Added Battery featured Tweaks (Coming soon also the Performance ones...)
 - Added a little description for each app
 - Two different types of Reborn Tweaks (Performance and Battery saving)
-- Some other minor changes made in the aroma installer 
+- Some other minor changes made in the aroma installer
 - Added Signature and ROM verification
 
 ##Version 2.70##
 
 - Fixed the ROM verification error
-- Updated ChangeLOG 
+- Updated ChangeLOG
 - Fixed Smart Connect force close problem (Compatibillity bug)
-- Fixed also the non installation problem 
+- Fixed also the non installation problem
 
 ##Version 3.20##
 

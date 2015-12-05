@@ -28,10 +28,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "Reborn Addons");
-ini_set("rom_version",          "3.5");
-ini_set("rom_author",           "nilac8991");
+ini_set("rom_version",          "4.0");
+ini_set("rom_author",           "nilac");
 ini_set("rom_device",           "All S+ Reborn supported devices");
-ini_set("rom_date",             "Feb, 19 2015");
+ini_set("rom_date",             "05/12/15");
 
 ##
 # Show static splash
@@ -39,7 +39,7 @@ ini_set("rom_date",             "Feb, 19 2015");
 splash(
 #  #-- Duration 4000ms / 4 seconds
     2000,
-  
+
   #-- <AROMA Resource Dir>/arhdsplash.png
     "arhdsplash"
 );
@@ -50,7 +50,7 @@ splash(
 anisplash(
 #  #-- Number of Loop
     4,
-  
+
   #-- Frame 1 [ Image, duration in millisecond ]. <AROMA Resource Dir>/splash/a[1..6].png
     "splash/a1", 500,
     "splash/a2", 30,
@@ -59,7 +59,7 @@ anisplash(
     "splash/a5", 30,
     "splash/a6", 30
 );
-  
+
   fontresload( "0", "ttf/DroidSans.ttf", "12" );
   fontresload( "1", "ttf/DroidSans.ttf", "18" );
 
@@ -72,20 +72,20 @@ theme("touchwiz");
 viewbox(
   #-- Title
     "Welcome!",
-  
+
   #-- Text
     "Welcome to the <b>"+
 	  #-- Get Config Value
 	  ini_get("rom_name")+
 	"</b> Installation for <b>"+ini_get("rom_device")+"</b>.\n\n"+
-	
+
       "Version(Release)\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
       "Updated on\t\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n\n"+
 
     "Click Next to continue",
-  
+
   #-- Icon
-    "@welcome"
+    "@install"
 );
 
 ###################################################################################################################
@@ -93,7 +93,7 @@ viewbox(
 # STEP 3 - Notes and Disclaimer
 #
 textbox(
-  
+
   "Disclaimer and Notes",
 
   "Read them because there are important!",
@@ -111,19 +111,39 @@ textbox(
 textbox(
   #-- Title
     "ChangeLOG",
-  
+
   #-- Subtitle
     "Changes made in this version:",
-  
+
   #-- Icon
     "@update",
-  
+
   #-- Arg 4
     resread("changelog.txt")
 );
+
 ###################################################################################################################
 #
-# STEP 5 - Utility Xperia Apps
+# STEP 5 - Device choose
+#
+
+pleasewait("Loading...");
+
+selectbox(
+  "Supported devices",
+
+  "Please choose your device from the list:",
+  "@personalize",
+  "devices.prop",
+
+  "Asus Zenfone 2 Z551ML","Z00A",1,
+  "Asus Zenfone 2 Z550ML","Z008",0
+
+);
+
+###################################################################################################################
+#
+# STEP 6 - Utility Xperia Apps
 #
 
 checkbox(
@@ -136,7 +156,7 @@ checkbox(
 	"Smart Connect", "Smart Connect actually let's you set up different profiles according to your phone usage (Headphones ecc...)", 1,
 	"Xperia Recorder", "It let you make sound recordings", 0,
 	"Xperia Converter", "It let you make any kind of values conversions like value,height ecc...", 0,
-  "Sony's Backup and Restore", "It let you backup your calendar events,bookmarks ecc...",0, 
+  "Sony's Backup and Restore", "It let you backup your calendar events,bookmarks ecc...",0,
   "Smart Key", "It's an addon for Smart Connect and it consist to create various profile for you Headset or Headphones",1
 
 
@@ -144,19 +164,19 @@ checkbox(
 
 ###################################################################################################################
 #
-# STEP 6 - Personalization
+# STEP 7 - Personalization
 #
 
 checkbox(
   #-- Title
     "Personalization Apps",
-  
+
   #-- Sub Title
     "Please select the apps which you want to install:",
-  
+
   #-- Icon
     "@personalize",
-    
+
   #-- Will be saved in /tmp/aroma/demo.prop
     "personalization.prop",
 
@@ -168,17 +188,17 @@ checkbox(
 
 ###################################################################################################################
 #
-# STEP 9 - Ads Block Choice
+# STEP 8 - AdBlock Choice
 #
 
 pleasewait("Loading...");
 
 selectbox(
-  "Ads Block Tweaks",           
+  "Ads Block Tweaks",
 
   "Please choose if you want to modify the hosts file by blocking all the internet ads",
 
-  "@tweaks",
+  "@personalize",
 
   "adsblock.prop",
 
@@ -189,7 +209,7 @@ selectbox(
 
 ###################################################################################################################
 #
-# STEP 8 - Installation
+# STEP 9 - Installation
 #
 
 ini_set("text_next", "Install now");
@@ -217,7 +237,7 @@ viewbox(
     "<b>Remember to do Wipe Cache and Dalvik after exit Aroma Installer</b>\n\n"+
     "<b>Please hit the thanks button and rate the ROM on the XDA thread</b>\n\n"+
     "<#selectbg_g><b>Enjoy your Reborn Addons!</b></#>\n\n",
-    "@welcome"
+    "@install"
 );
 
 exec("/sbin/cp","/tmp/aroma/.install.log","/sdcard/REBORN_ADDONS.log");

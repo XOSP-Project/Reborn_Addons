@@ -2,14 +2,13 @@ ui_print(" ");
 ui_print(" ");
 ui_print("***************************************************");
 ui_print("              XOSP Project Presents                ");
-ui_print("          Reborn Addons V3 for S+ Reborn           ");
+ui_print("          Reborn Addons V4 for S+ Reborn           ");
 ui_print("***************************************************");
 ui_print(" ");
-ui_print(" ");	   
+ui_print(" ");
 
 
-assert (getprop("ro.product.name") == "sreborn_ariesve" || getprop("ro.product.device") == "ariesve" 
-    || getprop("ro.product.name") == "sreborn_ancora" || getprop("ro.product.device") == "ancora" 
+assert (getprop("ro.reborn.device") == "Z00A" || getprop("ro.reborn.device") == "Z008"
     || abort("This package is only for \"S+ Reborn users!!\"; this is a \"" + getprop("ro.build.display.id") + "\ROM\"."););
 
 run_program("/sbin/busybox", "mount", "/system");
@@ -27,38 +26,38 @@ ui_print("@Installing....");
 
 ##Utility##
 
-if file_getprop("/tmp/aroma-data/utility.prop","item.0.1") == "1" 
+if file_getprop("/tmp/aroma-data/utility.prop","item.0.1") == "1"
 then
 ui_print("Installing Lifelog<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/Lifelog.apk", "/data/app/Lifelog.apk");
 endif;
 
 if file_getprop("/tmp/aroma-data/utility.prop","item.0.2") == "1"
-then 
+then
 ui_print("Installing Smart Connect<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/SmartConnect.apk", "/data/app/SmartConnect.apk");
 endif;
 
 if file_getprop("/tmp/aroma-data/utility.prop","item.0.3") == "1"
-then 
+then
 ui_print("Installing Recorder<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/Recorder.apk", "/data/app/Recorder.apk");
 endif;
 
-if file_getprop("/tmp/aroma-data/utility.prop","item.0.4") == "1" 
-then 
+if file_getprop("/tmp/aroma-data/utility.prop","item.0.4") == "1"
+then
 ui_print("Installing Converter<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/Converter.apk", "/data/app/Converter.apk");
 endif;
 
-if file_getprop("/tmp/aroma-data/utility.prop","item.0.5") == "1" 
-then 
+if file_getprop("/tmp/aroma-data/utility.prop","item.0.5") == "1"
+then
 ui_print("Installing Sony's Backup and Restore<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/SyncHub.apk", "/data/app/SyncHub.apk");
 endif;
 
-if file_getprop("/tmp/aroma-data/utility.prop","item.0.6") == "1" 
-then 
+if file_getprop("/tmp/aroma-data/utility.prop","item.0.6") == "1"
+then
 ui_print("Installing Smart Key<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Utility/SmartKey.apk", "/data/app/SmartKey.apk");
 endif;
@@ -78,19 +77,19 @@ endif;
 ##Personalize##
 
 if file_getprop("/tmp/aroma-data/personalization.prop","item.0.1") == "1"
-then 
+then
 ui_print("Installing Sony's Sketch<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Personalization/SomcSketch.apk", "/data/app/SomcSketch.apk");
 endif;
 
 if file_getprop("/tmp/aroma-data/personalization.prop","item.0.2") == "1"
-then 
+then
 ui_print("Installing Sony's Movie Creator<<<<<");
 package_extract_file("customize/APKs-Data/APKs-Data_Personalization/SomcCreator.apk", "/data/app/SomcCreator.apk");
 endif;
 
 if file_getprop("/tmp/aroma-data/personalization.prop","item.0.3") == "1"
-then 
+then
 ui_print("Installing Xperia Z3 Wallpapers<<<<<");
 package_extract_dir("customize/Xperia Wallpapers/system", "/system");
 endif;
@@ -113,7 +112,7 @@ unmount("/system");
 ui_print(" ");
 ui_print(" ");
 ui_print("***********************************************");
-ui_print("               Enjoy your Addons               ");   
+ui_print("               Enjoy your Addons               ");
 ui_print("    Comment And Rate the ROM on XDA Thread!!   ");
 ui_print("***********************************************");
 ui_print(" ");
